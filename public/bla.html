@@ -1,0 +1,93 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../images2/logo.png">
+
+    <title>Chart the Stock Market</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+     <script type="text/javascript"> 
+    var socket = io();
+    </script>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
+            
+      <script type="text/javascript">
+            // Load the Visualization API and the corechart package.
+            google.charts.load('current', {
+                'packages': ['corechart']
+            });
+    
+            // Set a callback to run when the Google Visualization API is loaded.
+            google.charts.setOnLoadCallback(drawChart);
+    
+            function drawChart() {
+    
+                // Create the data table.
+                var data = new google.visualization.DataTable();
+                data.addColumn('number', 'Day');
+                data.addRows([]);
+                // Set chart options
+                var options = {
+                    title: 'Box Office Earnings in First Two Weeks of Opening',
+                    subtitle: 'in millions of dollars (USD)'
+    
+                };
+    
+                // Instantiate and draw our chart, passing in some options.
+                var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+                chart.draw(data, options);
+            }
+        </script>    
+
+
+    <link rel="stylesheet" href="/custom/css/mystyles.css">
+</head>
+<body>
+
+        
+
+<div class='container'>
+        <div class='container' style='margin-top:60px'>
+            <div class='row '>
+                <div class='col-xs-12'>
+                    <!--Div that will hold the pie chart-->
+                    <div id="chart_div" class='chart'></div>
+                </div>
+            </div>
+            <div class='row '>
+                <div class='col-xs-12 col-sm-6 col-sm-offset-3 '>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Add a new stock</h3>
+                        </div>
+                        <div class="panel-body">
+                            <input type="text" id='stockSymbol' placeholder="Enter new stock symbol">
+                            <div class="input-group" style='margin-top:15px'>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary" type="button" id='hit' style='border-radius:10%'>Search!</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="/custom/js/myscripts.js"></script>    
+</body>
+</html>

@@ -1,0 +1,12 @@
+1. git init
+2. create the .gitignore file
+3. git add .
+4. git commit -am "Initial Commit"
+5. go and create an empty repository at github
+6. git remote add origin https://github.com/nickolaos77/volvoSpecialist.git
+7. git push -u origin master
+8. Heroku create
+9. heroku apps:rename newname
+10.git push heroku master
+
+και μετά από κάθε καινούρια ανανέωση git commit, git push και git push heroku
