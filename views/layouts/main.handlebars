@@ -38,8 +38,9 @@
              var data = google.visualization.arrayToDataTable(newStockData)
             // Set chart options
             var options = {
-                title: 'Box Office Earnings in First Two Weeks of Opening',
-                subtitle: 'in millions of dollars (USD)'
+                title       : 'Stock Prices the Last Month',
+                subtitle    : '',
+                hAxis       : {slantedText:true, slantedTextAngle:45}
             };
             // Instantiate and draw our chart, passing in some options.
             var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
